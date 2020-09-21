@@ -7,6 +7,8 @@
 ## 2주차 과제
 
    <img src="./png/2주차.png"></img>
+   
+   <img width=" height="" src="./png/고양이.jpg
 
 
 ## 3주차 과제
