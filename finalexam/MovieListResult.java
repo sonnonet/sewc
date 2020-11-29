@@ -1,3 +1,5 @@
+package org.techtown.movie;
+
 import java.util.ArrayList;
 
 public class MovieListResult {
