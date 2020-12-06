@@ -23,17 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void dialPhone(View view) {
           EditText editText = (EditText) findViewById(R.id.phone_number_edit);
-        //  dialPhoneNumber(editText.getText().toString());
-        //capturePhoto();
-        // captureVideo();
-        //selectContact();
-        //Uri gmmIntentUri = Uri.parse("geo:37.436972,126.747829");
-
-        //showMap(gmmIntentUri);
-       //     searchWeb("한글");
-        //selectContact();
-        //insertContact("아무개","hg.com");
-        //openWebPage("https://naver.com");
+          dialPhoneNumber(editText.getText().toString());
     }
 
         // 전화걸기
