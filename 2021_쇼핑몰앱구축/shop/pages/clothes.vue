@@ -1,10 +1,10 @@
 <template>
     <div class="container">
         <table>
-            <tr v-for="user in users" :key="user['id']">
-                <td>{{user['uid']}}</td>
-                <td>{{user['price']}}</td>
-                <td>{{user['status'] ? '일반유저': '관리자'}}</td>
+            <tr  v-for="cloth in clothes" :key="cloth['id']">
+                <td>{{cloth['category']}}</td>
+                <td>{{cloth['name']}}</td>
+                <td>{{cloth['price']}}</td>
             </tr>
         </table>
 
@@ -29,9 +29,9 @@ function getPagination ({currentPage, totalCount, limit}) {
 export default {
     layout: 'admin',
     async asyncData () {
-        let data = await axios.get('http://localhost:3000/api/v1.0/admin/users')
+        let data = await axios.get('http://localhost:3000/api/v1.0/admin/clothes')
         return {
-            users: data.data.user,
+            clothes: data.data.cloth,
             totalCount: data.data.totalCount,
             limit : data.data.limit,
             currentPage: data.data.currentPage,
@@ -44,9 +44,9 @@ export default {
     },
     methods : {
         async getPage (page) {
-            let url = `http://localhost:3000/api/v1.0/admin/users?page=${page}`
+            let url = `http://localhost:3000/api/v1.0/admin/clothes?page=${page}`
             let data = await axios.get(url)
-            this.users = data.data.user
+            this.clothes = data.data.cloth
             this.totalCount = data.data.totalCount
             this.limit = data.data.limit
             this.currentPage = data.data.currentPage
