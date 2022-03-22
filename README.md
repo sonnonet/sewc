@@ -12,6 +12,8 @@
 
 
 ## 3주차 과제
+    <img width="" height="" src="./pic/네이버.png"> </img>
+    <img width="" height="" src="./pic/전화걸기.png"> </img>
 
 ## 4주차 과제
    
