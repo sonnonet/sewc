@@ -1,4 +1,4 @@
-     myDBHelper = new myDBHelper(this);
+        myDBHelper = new myDBHelper(this);
         btnInit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -12,7 +12,7 @@
             @Override
             public void onClick(View v) {
                 sqlDB = myDBHelper.getWritableDatabase();
-                sqlDB.execSQL("INSERT INTO groupTBL VALUES ( '" + edtName.getText().toString() + "' , "+edtNumber.getText().toString() +");");
+                sqlDB.execSQL("INSERT INTO user1 VALUES ( '" + edtName.getText().toString() + "' , '" + edtPhoneNumber.getText().toString() + "' ,  '" + edtEmail.getText().toString() + "', " + edtSecure.getText().toString() + " , '" + edtAddress.getText().toString() + "' )");
                 sqlDB.close();
                 Toast.makeText(getApplicationContext(),"입력됨",0).show();
             }
@@ -23,17 +23,27 @@
             public void onClick(View v) {
                 sqlDB = myDBHelper.getReadableDatabase();
                 Cursor cursor;
-                cursor = sqlDB.rawQuery("SELECT * FROM groupTBL;",null);
+                cursor = sqlDB.rawQuery("SELECT * FROM user1;",null);
 
-                String strNames = "목록 리스트"+"\r\n"+"\r\n";
-                String strNumbers = "수량"+"\r\n"+"\r\n";
+                String strNames = "이름"+"\r\n"+"\r\n";
+                String strPhoneNumbers = "핸드폰번호"+"\r\n"+"\r\n";
+                String strEmail = "이메일 주소"+"\r\n"+"\r\n";
+                String strSecure = "비밀번호"+"\r\n"+"\r\n";
+                String strAddress = "집 주소"+"\r\n"+"\r\n";
 
                 while (cursor.moveToNext()){
                     strNames += cursor.getString(0) + "\r\n";
-                    strNumbers += cursor.getString(1) + "\r\n";
+                    strPhoneNumbers += cursor.getString(1) + "\r\n";
+                    strEmail += cursor.getString(2) + "\r\n";
+                    strSecure += cursor.getString(3) + "\r\n";
+                    strAddress += cursor.getString(4) + "\r\n";
+
                 }
-                edtNameResultm.setText(strNames);
-                edtNumberResult.setText(strNumbers);
+                edtNameResult.setText(strNames);
+                edtPhoneNumberResult.setText(strPhoneNumbers);
+                edtEmailResult.setText(strEmail);
+                edtSecureResult.setText(strSecure);
+                edtAddressResult.setText(strAddress);
                 cursor.close();
                 sqlDB.close();
             }
