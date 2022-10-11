@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/ainputCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 / 80 바이트"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff0000ff"
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/ainputMessage"
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:maxLength="80"
+            android:layout_gravity="center_horizontal"
+            android:textSize="36sp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="3">
+        <Button
+            android:id="@+id/asendBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_margin="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="전송"
+            android:textSize="18sp"/>
+        <Button
+            android:id="@+id/acloseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_margin="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="닫기"
+            android:textSize="18sp"/>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
